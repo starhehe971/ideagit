@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yupi</groupId>
+    <artifactId>yupi-generator-basic</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.32</version>
+        </dependency>
+
+    </dependencies>
+
+    <!--
+    1.maven的配置中为jdk17进行编译，而我们这个项目使用maven搭建的(其配置文件配置的jdk版本为17)。需要修改下编译时使用的jdk版本。否则报错！
+
+    2.在 IntelliJ IDEA 中，打开项目设置（通常可以通过 “File” -> “Project Structure” 菜单打开）：
+        在 “Project” 选项卡中，确保 “Project SDK” 设置为 Java 8。
+        在 “Modules” 选项卡中，检查每个模块的 “Sources” 和 “Dependencies” 设置，确保它们也使用 Java 8
+
+    3.如果你的项目依赖于使用 Java 17 编译的库或框架，考虑寻找与 Java 8 兼容的版本，或者更新你的项目以使用 Java 17 运行环境。
+
+    4.在修改了项目设置后，尝试清理项目并重新构建它。这可以确保项目使用正确的 Java 8 版本进行编译和运行。
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
